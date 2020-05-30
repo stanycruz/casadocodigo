@@ -7,6 +7,7 @@ const db = require('./database');
 
 module.exports = (app) => {
 
+    // configuração da sessão e da autenticação.
     passport.use(new LocalStrategy(
         {
             usernameField: 'email',
@@ -57,4 +58,4 @@ module.exports = (app) => {
         req.passport = passport;
         next();
     });
-}
+};
